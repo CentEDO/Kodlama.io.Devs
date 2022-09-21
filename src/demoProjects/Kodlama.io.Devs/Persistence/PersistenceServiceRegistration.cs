@@ -21,6 +21,11 @@ namespace Persistence
                                                         options.UseSqlServer(
                                                             configuration.GetConnectionString("Kodlama.io.DevsConnectionString")));
             services.AddScoped<ILanguageRepository, LanguageRepository>();
+            services.AddScoped<ITechnologyRepository, TechnologyRepository>();
+            services.AddScoped<IDeveloperRepository, DeveloperRepository>();
+            services.AddScoped<IGitHubProfileRepository, GitHubProfileRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
+
             return services;
         }
     }

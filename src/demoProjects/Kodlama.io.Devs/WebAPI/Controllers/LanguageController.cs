@@ -36,7 +36,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpDelete("{Id}")]
-        public async Task<IActionResult> Delete([FromBody] DeleteLanguageCommand deleteLanguageCommand)
+        public async Task<IActionResult> Delete([FromRoute] DeleteLanguageCommand deleteLanguageCommand)
         {
             DeletedLanguageDto result = await Mediator.Send(deleteLanguageCommand);
             return Ok(result);  
